@@ -293,7 +293,7 @@ liberado.**
 **Allan Corrêa** — desenvolvedor backend.<br/>
 Projeto, arquitetura, banco de dados e produto.<br/>
 [GitHub](https://github.com/allancorreaz) · [LinkedIn](https://www.linkedin.com/in/allandemelocorrea-45875016a) ·
-[Portfólio](https://meu-portifolio-dun-two.vercel.app)
+[Portfólio](https://www.contatoallancorrea.com.br)
 
 </td>
 </tr>

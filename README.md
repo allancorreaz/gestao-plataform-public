@@ -66,7 +66,7 @@ taxa e o prazo da maquininha), painel, DRE e auditoria.
 
 |     | Recurso                         | Em uma frase                                                                                    |
 | --- | ------------------------------- | ----------------------------------------------------------------------------------------------- |
-| 🍔  | **Cardápio digital com QR**     | O cliente pede pelo celular, sem baixar app, e o pedido cai na cozinha em tempo real.            |
+| 🍔  | **Cardápio digital com QR**     | O cliente pede pelo celular, e o pedido cai na cozinha em tempo real.                           |
 | 💰  | **Formação de preço**           | Custo + frete + impostos → markup ou margem desejada → preço sugerido e reprecificação em massa. |
 | 📄  | **Orçamento → pedido → nota**   | Fluxo comercial completo com PDF, WhatsApp, limite de desconto e reserva de estoque.             |
 | 📦  | **Estoque com WMS**             | Depósitos, endereços, transferências entre empresas, inventário e rastreio de cada movimento.    |

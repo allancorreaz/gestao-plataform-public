@@ -27,7 +27,7 @@ menu e cores de cada segmento.
 
 > **Repositório vitrine.** Aqui estão a apresentação, a documentação e as imagens do produto.
 > O código-fonte é privado. Quer ver funcionando ou conversar sobre o projeto?
-> Fale comigo pelo [meu perfil](https://github.com/allancorreaz) ou abra uma
+> Fale comigo pelo [LinkedIn](https://www.linkedin.com/in/allandemelocorrea-45875016a) ou abra uma
 > [issue](https://github.com/allancorreaz/gestao-plataform-public/issues).
 
 ---
@@ -292,7 +292,7 @@ liberado.**
 
 **Allan Corrêa** — desenvolvedor backend.<br/>
 Projeto, arquitetura, banco de dados e produto.<br/>
-[GitHub](https://github.com/allancorreaz) ·
+[GitHub](https://github.com/allancorreaz) · [LinkedIn](https://www.linkedin.com/in/allandemelocorrea-45875016a) ·
 [Portfólio](https://meu-portifolio-dun-two.vercel.app)
 
 </td>

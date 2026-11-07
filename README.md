@@ -13,7 +13,7 @@ menu e cores de cada segmento.
 [![Ver o app](https://img.shields.io/badge/▶%20ver%20o%20app-gestao--plataform.pages.dev-ff6b35?style=for-the-badge)](https://gestao-plataform.pages.dev)
 
 ![Versão](https://img.shields.io/badge/versão-1.0.0-111827)
-![Testes](https://img.shields.io/badge/testes-66%20passando-0e9f6e)
+![Testes](https://img.shields.io/badge/testes-83%20passando-0e9f6e)
 ![React](https://img.shields.io/badge/React-19-149eca?logo=react&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178c6?logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-RLS-4169e1?logo=postgresql&logoColor=white)
@@ -74,7 +74,10 @@ taxa e o prazo da maquininha), painel, DRE e auditoria.
 | 💳  | **12x por bandeira**            | Taxa, juros por parcela e prazo de recebimento configurados por bandeira de cartão.              |
 | 📊  | **Painel + DRE**                | Comparação com o período anterior, horários de pico, canais e ponto de equilíbrio.               |
 | 🎨  | **A marca do cliente**          | Cada empresa escolhe suas cores; o sistema inteiro e o cardápio se adaptam.                      |
-| 🧭  | **Tour guiado**                 | Cada tela ensina a si mesma com destaque passo a passo.                                          |
+| 🧭  | **Tour guiado e "?" no menu**   | Cada item do menu explica para que serve; o tour destaca item por item e cada tela.             |
+| 💬  | **WhatsApp automático**         | Avisa o cliente em cada etapa do pedido e responde quem chama com o link de pedidos.            |
+| 🧾  | **Comprovante não fiscal**      | 80 mm, 58 mm ou A4, vias, cabeçalho e rodapé próprios, 2ª via e impressão ao concluir.          |
+| 🔁  | **Assinatura automática**       | Cobrança recorrente pelo Asaas: pagou, renovou sozinho; não pagou, fica só leitura.             |
 
 ## Telas
 
@@ -112,7 +115,8 @@ taxa e o prazo da maquininha), painel, DRE e auditoria.
 
 | Área                 | Recursos                                                                                                                                                                         |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Vendas**           | PDV com busca, adicionais e tabela de preço · pedidos em tempo real · cozinha (KDS) · devolução e troca com crédito · impressão 80 mm · WhatsApp com mensagem pronta              |
+| **Vendas**           | PDV com busca, adicionais e tabela de preço · quadro de pedidos em tempo real com filtros e atrasos · agenda com responsável · linha do tempo de cada pedido · cozinha (KDS) · devolução e troca com crédito · comprovante não fiscal |
+| **WhatsApp**         | Conexão por QR Code (Evolution API) · aviso por etapa com textos editáveis · resposta automática com o link de pedidos · "status" do último pedido · fila com novas tentativas     |
 | **Cardápio digital** | QR por mesa · pedido sem conta · horário de funcionamento · Pix com QR · "Pedir de novo" · cores da marca                                                                       |
 | **Comercial**        | Orçamento → pré-pedido → pedido de venda → faturamento · negociação de preço só pela gestão · limite de desconto por papel · PDF A4 · reserva de estoque                          |
 | **Entregas**         | Ordem de entrega a partir da venda · romaneio com assinatura · etapas (carregando, em rota, entregue) · valor a cobrar · link do mapa                                            |
@@ -123,8 +127,9 @@ taxa e o prazo da maquininha), painel, DRE e auditoria.
 | **Financeiro**       | A pagar e a receber com valor líquido · baixas · fluxo de caixa · **DRE** com análise vertical, comparação e ponto de equilíbrio                                                 |
 | **Fiscal**           | Emitente com consulta de CNPJ · NCM, CEST, CFOP, CST/CSOSN · NF-e, NFC-e e NFS-e validadas contra rejeições comuns · fila e cancelamento · integração com provedor (Focus NFe)  |
 | **Cadastros**        | Clientes PF/PJ com IE e regime tributário · **CEP e CNPJ preenchem sozinhos** · fornecedores · equipe por convite com papéis                                                     |
-| **Gestão**           | Auditoria de tudo com antes/depois · licenciamento por plano e módulo · superadmin com receita recorrente                                                                        |
-| **Experiência**      | Tour guiado · central de ajuda · cores da marca · PWA instalável · dados de exemplo por segmento                                                                                |
+| **Gestão**           | Auditoria de tudo com antes/depois · licenciamento por plano e módulo · teste de 7 dias · empresa adicional só com assinatura                                                     |
+| **Assinaturas**      | Cobrança recorrente no Asaas (Pix, boleto ou cartão) · webhook idempotente renova a licença · painel do superadmin com MRR, vencimentos, atrasos e exportação · integrações configuradas pela tela |
+| **Experiência**      | "?" explicativo em cada item do menu · tour com destaque item por item · central de ajuda · cores da marca · PWA instalável · dados de exemplo por segmento                      |
 
 ## Segmentos
 
@@ -210,7 +215,7 @@ Mais detalhes em [docs/ARQUITETURA.md](docs/ARQUITETURA.md).
 
 ## Qualidade e testes
 
-**66 testes automatizados** rodam em segundos, sem servidor, inclusive os do banco: as migrations
+**83 testes automatizados** rodam em segundos, sem servidor, inclusive os do banco: as migrations
 são aplicadas num **PostgreSQL em memória (PGlite)** e as regras são testadas de verdade.
 
 - Isolamento entre empresas e permissões por papel
@@ -249,16 +254,20 @@ gradientes, luz e sombra), leves e sem direitos de terceiros:
 
 ## Planos
 
-Módulos são liberados por plano e podem ser ajustados por empresa. **Na avaliação, tudo fica
-liberado.**
+Todos começam com **7 dias grátis, com tudo liberado**. Depois, a assinatura é mensal e cobrada
+automaticamente. Os valores e módulos são editados pelo superadmin e aparecem na hora na página
+inicial, que traz um comparativo item por item.
 
-| Módulo                                                                  | Inicial | Profissional | Empresarial |
-| ----------------------------------------------------------------------- | :-----: | :----------: | :---------: |
-| Painel, pedidos/PDV, produtos, clientes, estoque, financeiro, auditoria |    ✓    |      ✓       |      ✓      |
-| Cardápio digital e cozinha                                              |    ✓    |      ✓       |      ✓      |
-| Fornecedores, relatórios, fidelidade                                    |         |      ✓       |      ✓      |
-| Orçamentos, pedidos de venda e entregas                                 |         |      ✓       |      ✓      |
-| Depósitos (WMS) e notas fiscais                                         |         |              |      ✓      |
+|                                                                       | Inicial  | Profissional | Empresarial |
+| --------------------------------------------------------------------- | :------: | :----------: | :---------: |
+| **Mensalidade**                                                       | R$ 89    | R$ 149       | R$ 249      |
+| Usuários / filiais                                                    | 3 / 1    | 10 / 2       | 50 / 10     |
+| Painel, pedidos e caixa, produtos, clientes, estoque, financeiro e DRE | ✓        | ✓            | ✓           |
+| Cardápio/catálogo digital, cozinha, orçamentos e entregas             | ✓        | ✓            | ✓           |
+| Notas fiscais e auditoria                                             | ✓        | ✓            | ✓           |
+| Fornecedores, relatórios e fidelidade                                 |          | ✓            | ✓           |
+| Depósitos (WMS) e transferências entre empresas                       |          |              | ✓           |
+| Empresa adicional                                                     | R$ 49/mês | R$ 49/mês   | R$ 49/mês   |
 
 ## Roteiro
 
@@ -267,7 +276,10 @@ liberado.**
 - [x] Orçamentos, pedidos de venda, entregas, WMS e transferências
 - [x] Fiscal pronto (NF-e, NFC-e, NFS-e) e DRE
 - [ ] Ligar a emissão fiscal no primeiro cliente
-- [ ] WhatsApp Cloud API com confirmação e status automáticos
+- [x] WhatsApp com avisos e resposta automática (Evolution API)
+- [x] Assinatura recorrente com renovação automática (Asaas)
+- [x] Comprovante não fiscal e agenda de atendimentos
+- [ ] Migrar o WhatsApp para a API oficial quando houver volume
 - [ ] Integração com iFood e apps de entrega
 - [ ] Conciliação bancária por OFX
 - [ ] Lote e validade no estoque
@@ -281,6 +293,8 @@ liberado.**
 | [Guia do sistema](docs/GUIA-DO-SISTEMA.md)       | Quem usa: cada módulo explicado passo a passo   |
 | [Arquitetura](docs/ARQUITETURA.md)               | Quem desenvolve: decisões, camadas e dados      |
 | [Fiscal](docs/FISCAL.md)                         | Como a emissão de NF-e, NFC-e e NFS-e funciona  |
+| [Assinatura](docs/ASSINATURA.md)                 | Cobrança recorrente e renovação automática      |
+| [WhatsApp](docs/WHATSAPP.md)                     | Avisos de pedido e resposta automática          |
 | [Histórico de versões](CHANGELOG.md)             | O que mudou em cada versão                      |
 
 ## Autor
